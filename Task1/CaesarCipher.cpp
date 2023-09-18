@@ -31,7 +31,6 @@ string removeDuplicate(string str)
        isDuplicate = false;   
       }
   }
-   cout << result << endl;
    return result;
 }
 
@@ -85,6 +84,8 @@ int main()
       string united = key2+cipher2;
       cipher2 = removeDuplicate(united);
       
+      cout << "The unmoved alphabet is:" << cipher2 << endl;
+      
         for(int i = 0; i < alphabet.length(); i++){
       for(int j = 0; j < result.length(); j++){
           if(alphabet[i] == response[j]){
@@ -104,18 +105,23 @@ int main()
       string united = key2+cipher2;
       cipher2 = removeDuplicate(united);
       
-     
+      cout << "The unmoved alphabet is:" << cipher2 << endl;
   
   for(int i = 0; i < cipher2.length(); i++){
       for(int j = 0; j < result.length(); j++){
-          if(alphabet[i] == response[j]){
-              result[j] = cipher2[abs((26+i-key)%26)];  
-          }else if(alphabet[i] == tolower(response[j])){
-              result[j] = toupper(cipher2[abs((26+i-key)%26)]);
+          if(cipher2[i] == response[j]){
+              result[j] = alphabet[abs((26+i-key)%26)];  
+          }else if(cipher2[i] == tolower(response[j])){
+              result[j] = toupper(alphabet[abs((26+i-key)%26)]);
           }
       }
   }
+  
+  
+  
   }
+  
+  
   
   
   cout << result << endl;
